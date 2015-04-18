@@ -1,26 +1,4 @@
 
-Skip to content
-This repository
-
-    Explore
-    Gist
-    Blog
-    Help
-
-    @tcamick tcamick
-
-1
-0
-
-    0
-
-tcamick/MiscScripts
-
-MiscScripts/backup.py
-@tcamick tcamick on Feb 3 Update backup.py
-
-1 contributor
-60 lines (44 sloc) 1.554 kb
 #!/usr/bin/env python
 '''
 Name: Thomas Cole Amick
