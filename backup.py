@@ -36,7 +36,7 @@ ENCODED_PASSWORD = urllib.quote(PASSWORD)
 #Grab machine names
 #The subprocess module allows you to spawn new processes, connect to their input/output/error pipes, and obtain their return codes
 server_creds = "vi://" + USERNAME + ':' + ENCODED_PASSWORD + '@' + HOSTNAME #vi://${USERNAME}:${ENCODED_PASSWORD}@${HOSTNAME}/
-MACHINES = subprocess.Popen(['ovftool', '--sourceType=' + SOURCE_TYPE , '--datastore=' + DATASTORE, server_creds + '/' ], stdout = subprocess.PIPE  )
+MACHINES = subprocess.Popen(['ovftool', '--noSSLVerify' ,'--sourceType=' + SOURCE_TYPE , '--datastore=' + DATASTORE, server_creds + '/' ], stdout = subprocess.PIPE  )
 
 #Put machine names in a list of strings
 machineList = []
@@ -54,6 +54,6 @@ for machine in machineList:
   print "Backing up: " + machine
   TARGET = TARGET_PATH + '/' + machine
   ENCODED_MACHINE_NAME = urllib.quote(machine)
-  subprocess.call(['ovftool', '--sourceType=' + SOURCE_TYPE , '--datastore=' + DATASTORE, server_creds + '/' + machine, TARGET_PATH])
+  subprocess.call(['ovftool', '--noSSLVerify', '--sourceType=' + SOURCE_TYPE , '--datastore=' + DATASTORE, server_creds + '/' + machine, TARGET_PATH])
 
 
