@@ -2,7 +2,7 @@
 #!/usr/bin/env python
 '''
 Name: Thomas Cole Amick
-Run: python backup.py
+Run: python esxi_backup.py
 '''
 
 #
